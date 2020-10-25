@@ -4,7 +4,8 @@ I made a basic HIIT timer so I wouldn't have to rely on online pages and
 really terrible HIIT phone apps that do too much for me anyway. It's the
 bare minimum:
 
-* Say (with TTS) and display the current state of the routine (exercise name, rest, upcoming exercise)
+* Say (with TTS) and display the current state of the routine (exercise 
+name, rest, upcoming exercise)
 * Make your routine on the fly
 * Load up created plaintext routines
 
@@ -44,3 +45,6 @@ rest_time: 10
 
 reps: 4
 ```
+
+_This program and all the TTS has only been tested on OSX, so please let
+me know if you get any errors, as I'd love to figure it out :)_
