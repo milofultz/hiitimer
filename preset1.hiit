@@ -1,0 +1,16 @@
+# Sample Exercise Routine 1
+#
+# Ensure that multiple exercises go on multiple successive lines and single
+# values go on the same line as their key.
+
+exercises:
+	Pushups
+	Squats
+	Plank
+	Jumping Jacks
+
+exercise_time: 30
+
+rest_time: 10
+
+reps: 4
