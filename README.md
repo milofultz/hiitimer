@@ -15,6 +15,10 @@ do anything more.
 
 ### Preset Routines
 
+Preset routines can be loaded into HIITimer with the `-f` flag followed by the filename:
+
+	python3 hiitimer.py -f preset1.hiit
+
 There are four fields necessary for a successful routine file:
 
 * `exercises:` - A list of exercises which will comprise one rep. This 
