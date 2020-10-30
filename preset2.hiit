@@ -1,0 +1,13 @@
+# Sample Exercise Routine 2
+
+exercises:
+	Pullup Superman
+	Lunges
+	Shoulder to Foot Taps
+	Burpees
+
+exercise_time: 30
+
+rest_time: 10
+
+reps: 4
