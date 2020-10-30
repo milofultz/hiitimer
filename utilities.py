@@ -14,10 +14,22 @@ def load_data(filepath):
     return data
 
 
+def does_file_exist(filepath):
+    try:
+        data = load_data(filepath)
+    except FileNotFoundError:
+        return False
+    return True
+
+
 def load_routine_data(filepath):
-    data = load_data(filepath)
+    try:
+        data = load_data(filepath)
+    except FileNotFoundError:
+        print('Routine Not Found')
+        return
     data = data.split('\n')
-    
+
     routine = {}
     current_field = ''
     for line in data:
@@ -33,7 +45,7 @@ def load_routine_data(filepath):
         else:
             item = line.strip()
             routine[current_field].append(line.strip())
-    
+
     print('Routine loaded.')
     return routine
 
@@ -55,7 +67,7 @@ def get_routine_data():
     rest_time = get_rest_time()
     reps = get_reps()
 
-    return {'exercises': exercises, 
+    return {'exercises': exercises,
             'exercise_time': exercise_time,
             'rest_time': rest_time,
             'reps': reps}
@@ -108,16 +120,18 @@ def start_period(name, length):
 
 def start_routine(exercises, exercise_time, rest_time, reps):
     clear_screen()
+    start_period(f"Get ready! First is {exercises[0]}", 10)
     for rep in range(reps):
         for i, exercise in enumerate(exercises):
             start_period(exercise, exercise_time)
             clear_screen()
-            if rep != reps - 1 and rest_time != 0:
+            if rest_time != 0:
                 if i == len(exercises) - 1:
                     next_exercise = exercises[0]
                 else:
                     next_exercise = exercises[i+1]
-                start_period(f'Rest. Next is {next_exercise}', rest_time)
+                if rep != reps-1 and i != len(exercises)-1:
+                    start_period(f'Rest. Next is {next_exercise}', rest_time)
                 clear_screen()
     say('Complete')
 

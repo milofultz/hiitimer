@@ -1,6 +1,8 @@
 import argparse
+import sys
 
-from utilities import (clear_screen, load_routine_data, get_routine_data, 
+from utilities import (clear_screen, does_file_exist,
+                       load_routine_data, get_routine_data, get_ready,
                        print_loaded_routine, start_period, start_routine)
 
 
@@ -18,6 +20,9 @@ if __name__ == '__main__':
     clear_screen()
 
     if args.filename:
+        if not does_file_exist(args.filename):
+            print('File not found.')
+            sys.exit()
         routine = load_routine_data(args.filename)
         print_loaded_routine(routine)
         input('Press enter to continue...')
@@ -25,6 +30,4 @@ if __name__ == '__main__':
         print()
         routine = get_routine_data()
 
-    clear_screen()
-    start_period('Get ready!', 10)
     start_routine(**routine)
