@@ -2,7 +2,7 @@ import argparse
 import sys
 
 from utilities import (clear_screen, does_file_exist,
-                       load_routine_data, get_routine_data, get_ready,
+                       load_routine_data, get_routine_data,
                        print_loaded_routine, start_period, start_routine)
 
 

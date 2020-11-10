@@ -130,7 +130,7 @@ def start_routine(exercises, exercise_time, rest_time, reps):
                     next_exercise = exercises[0]
                 else:
                     next_exercise = exercises[i+1]
-                if rep != reps-1 and i != len(exercises)-1:
+                if rep != reps-1 or i != len(exercises)-1:
                     start_period(f'Rest. Next is {next_exercise}', rest_time)
                 clear_screen()
     say('Complete')
